@@ -40,6 +40,7 @@ struct PhysicsCircle{
         b = kBetaLin * 2*radius;                            // linear:    f_lin  = b*v,  b = β·D
         c = kGammaQuad * pow(2*radius,2);                   // quadratic: f_quad = c*v², c = γ·D²
     }
+    
 };
 
 
