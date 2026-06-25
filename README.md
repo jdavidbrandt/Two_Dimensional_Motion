@@ -38,10 +38,11 @@ And for most of the flight of the sphere, this will be quadratic.
 ## The Equations of Motion for Quadratic Drag
 
 $$
-\begin{cases}
+
 m \ddot{x} = -c \sqrt{\dot{x^2} + \dot{y^2}} \dot{x} \\
+
 m \ddot{y} = -c \sqrt{\dot{x^2} + \dot{y^2}} \dot{x}
-\end{cases}
+
 $$
 
 ## Varying Mass
