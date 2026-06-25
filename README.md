@@ -112,3 +112,5 @@ The other two spheres are more compareable, but as you can see, it only takes th
 
 Now we can see that air resistance clearly affects the rate at which objects fall 
 
+![](plots/varying_diameter.gif)
+
