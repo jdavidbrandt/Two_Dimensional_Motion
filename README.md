@@ -41,7 +41,7 @@ $$
 \large
 m \ddot{x} = -c \sqrt{\dot{x^2} + \dot{y^2}} \dot{x} \\
 
-m \ddot{y} = mg - c \sqrt{\dot{x^2} + \dot{y^2}} \dot{y}
+m \ddot{y} = m g - c \sqrt{\dot{x^2} + \dot{y^2}} \dot{y}
 
 $$
 
