@@ -82,4 +82,4 @@ These are fairly comparable, but still different. Let's see how they interact on
 
 Friendly reminder that each pixel is a meter, so the width of the physics world you are looking at is 1.9 kilometers by ~ 1km
 
-![](plots/VaryingMass.gif)
+![](plots/varying_mass.gif)
