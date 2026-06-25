@@ -24,7 +24,7 @@ $\large b = \Beta D$ \hspace{1cm} $\large c = \gamma D^2$
 
 Where
 
-$\large \Beta = 1.6 \times 10^{-4} N s / m^2$ \hspace{1cm} $\large \gamma = 0.25 N s^2 / m^4$
+$\large \beta = 1.6 \times 10^{-4} N s / m^2$  \hspace{1cm}  $\large \gamma = 0.25 N s^2 / m^4$
 
 $\large \frac{f_{quad}}{f_{lin}} = \frac{cv^{2}}{bv} = \frac{\gamma D}{\beta}v = (1.6 \times 10^{3} \frac{s}{m^2}) D v$ 
 
