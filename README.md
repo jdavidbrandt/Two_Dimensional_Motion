@@ -1,7 +1,8 @@
 
 # Two Dimensional Motion, and Quadratic Air Resistance
 ## Investigation of falling bodies using raylib, and my own RK4 Numerical Integrator
-==================================================================================
+=====================================================================================
+
 In my Falling_Bodies program, I demonstrate how in a vaccuum, objects fall with the same acceleration while no resistance is present
 
 In this program, there is a non-conservative force at play, (drag) that changes the terminal velocity based on the mass (and shape) of the object
