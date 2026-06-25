@@ -34,3 +34,7 @@ So for the split second where the velocity in the y direction is 0, this should 
 we will be treating these as smooth functions, with quadratic drag only.
 
 And for most of the flight of the sphere, this will be quadratic.
+
+## Varying Mass
+
+![/plots/Pos_Quad_AR_VaryingMass.png]
