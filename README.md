@@ -37,4 +37,4 @@ And for most of the flight of the sphere, this will be quadratic.
 
 ## Varying Mass
 
-![/plots/Pos_Quad_AR_VaryingMass.png]
+![Varying Mass](/plots/Pos_Quad_AR_VaryingMass.png)
