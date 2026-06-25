@@ -38,12 +38,14 @@ And for most of the flight of the sphere, this will be quadratic.
 ## The Equations of Motion for Quadratic Drag
 
 $$
-
+\large
 m \ddot{x} = -c \sqrt{\dot{x^2} + \dot{y^2}} \dot{x} \\
 
-m \ddot{y} = -c \sqrt{\dot{x^2} + \dot{y^2}} \dot{x}
+m \ddot{y} = mg - c \sqrt{\dot{x^2} + \dot{y^2}} \dot{y}
 
 $$
+
+Since these equations have both x and y components mixed into **both** equations, this is a coupled, second order ordinary differential equation, and we must numerically integrate as such.
 
 ## Varying Mass
 
@@ -53,4 +55,16 @@ $\m_{b} = 0.1 kg$ $\hspace{1cm}$ $\m_{r} = 10.0 kg$ $\hspace{1cm}$ $\m_{o} = 100
 
 ![Varying Mass](plots/Pos_Quad_AR_VaryingMass.png)
 
-As you can see, the orange sphere, which is much more massive, takes a longer time to reach it's terminal velocity
+As you can see, the orange sphere, which is much more massive, takes a longer time to reach it's terminal velocity let's investigate why this is.
+
+When the net force acting upon an object is equal to 0, there is no more acceleration, so setting net force = 0,
+
+$\large g = \frac{c}{m} \sqrt{\dot{x^2} + \dot{y^2}} \dot{y}$
+
+The orange mass is very massive compared to the other two, hence the right term here is small, because we are dividing by a large number
+
+In order for this right term to grow, to reach g, it must have a higher y velocity, so that's why it takes longer to reach it's terminal velocity compared to the other two.
+
+Here are the terminal velocities of all spheres involved
+
+![](plots/Vel_Quad_AR_VaryingMass.png)
