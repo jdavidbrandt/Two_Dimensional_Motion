@@ -16,7 +16,7 @@ From Taylor's Classical Mechanics, page 44 and 45.
 
 Assuming the drag force is always in the exact opposite direction of the velocity, and the object is a sphere, we can make the following statements
 
-$\large \mathbf{f} = -f(v)\mathbf{\hat{v}}$
+$\large \vec{f} = -f(v)\mathbf{\hat{v}}$
 
 $\large f(v) = bv + c v^2 = f_{lin} + f_{quad}$
 
@@ -24,7 +24,7 @@ $\large b = \beta D$ $\hspace{1cm}$ $\large c = \gamma D^2$
 
 Where
 
-$\large \beta = 1.6 \times 10^{-4} N s / m^2$  \hspace{1cm}  $\large \gamma = 0.25 N s^2 / m^4$
+$\large \beta = 1.6 \times 10^{-4} N s / m^2$  $\hspace{1cm}$  $\large \gamma = 0.25 N s^2 / m^4$
 
 $\large \frac{f_{quad}}{f_{lin}} = \frac{cv^{2}}{bv} = \frac{\gamma D}{\beta}v = (1.6 \times 10^{3} \frac{s}{m^2}) D v$ 
 
