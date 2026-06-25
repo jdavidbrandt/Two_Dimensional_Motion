@@ -70,3 +70,15 @@ Here are the terminal velocities of all spheres involved
 ![](plots/Vel_Quad_AR_VaryingMass.png)
 
 As you can see, the orange ball falls much faster than the other two. This is like dropping a bowling ball versus a fairly light balloon.
+
+Now let's ignore the orange ball, and compare the other two masses
+
+![](plots/Pos_Quad_AR_VaryingMassNoOrange.png)
+
+![](plots/Vel_Quad_AR_VaryingMassNoOrange.png)
+
+These are fairly comparable, but still different. Let's see how they interact on screen.
+
+Friendly reminder that each pixel is a meter, so the width of the physics world you are looking at is 1.9 kilometers by ~ 1km
+
+![](plots/VaryingMass.gif)
