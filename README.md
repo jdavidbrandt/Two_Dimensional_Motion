@@ -60,7 +60,7 @@ As you can see, the orange sphere, which is much more massive, takes a longer ti
 
 When the net force acting upon an object is equal to 0, there is no more acceleration, so setting net force = 0,
 
-$\large g = \frac{c}{m} \sqrt{\dot{x^2} + \dot{y^2}} \dot{y}$
+$\large g = \frac{c}{m} \sqrt{\dot{x^2} + \dot{y^2}}\ \dot{y}$
 
 The orange mass is very massive compared to the other two, hence the right term here is small, because we are dividing by a large number
 
