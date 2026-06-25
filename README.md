@@ -16,7 +16,7 @@ From Taylor's Classical Mechanics, page 44 and 45.
 
 Assuming the drag force is always in the exact opposite direction of the velocity, and the object is a sphere, we can make the following statements
 
-$\large \mathbf{f} = -f(v){\mathbf{\hat{v}}
+$\large \mathbf{f} = -f(v){\mathbf{\hat{v}}$
 
 $\large f(v) = bv + c v^2 = f_{lin} + f_{quad}$
 
