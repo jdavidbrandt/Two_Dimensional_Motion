@@ -20,7 +20,7 @@ $\large \mathbf{f} = -f(v)\mathbf{\hat{v}}$
 
 $\large f(v) = bv + c v^2 = f_{lin} + f_{quad}$
 
-$\large b = \Beta D$ \hspace{1cm} $\large c = \gamma D^2$
+$\large b = \beta D$ $\hspace{1cm}$ $\large c = \gamma D^2$
 
 Where
 
