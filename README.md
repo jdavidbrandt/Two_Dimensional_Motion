@@ -51,7 +51,7 @@ Since these equations have both x and y components mixed into **both** equations
 
 Here, all of the diameters of the spheres are 1 meter, and the masses vary.
 
-$\m_{b} = 0.1 kg$ $\hspace{1cm}$ $\m_{r} = 10.0 kg$ $\hspace{1cm}$ $\m_{o} = 1000.0 kg$
+$m_{b} = 0.1 \text{ kg}$  $\hspace{1cm}$ $m_{r} = 10.0 \text{ kg}$ $\hspace{1cm}$ $m_{o} = 1000.0 \text{ kg}$
 
 ![Varying Mass](plots/Pos_Quad_AR_VaryingMass.png)
 
