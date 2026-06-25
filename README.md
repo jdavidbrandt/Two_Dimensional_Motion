@@ -38,10 +38,12 @@ And for most of the flight of the sphere, this will be quadratic.
 ## The Equations of Motion for Quadratic Drag
 
 $$
+\left.
 \begin{aligned}
-m \ddot{x} &= -c \sqrt{\dot{x}^2 + \dot{y}^2}\, \dot{x} \\
-m \ddot{y} &= m g - c \sqrt{\dot{x}^2 + \dot{y}^2}\, \dot{y}
+m \ddot{x} &= -c \sqrt{\dot{x}^2 + \dot{y}^2}\ \dot{x} \\
+m \ddot{y} &= m g - c \sqrt{\dot{x}^2 + \dot{y}^2}\ \dot{y}
 \end{aligned}
+\right\}
 $$
 
 Since these equations have both x and y components mixed into **both** equations, this is a coupled, second order ordinary differential equation, and we must numerically integrate as such.
