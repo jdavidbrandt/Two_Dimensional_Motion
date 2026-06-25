@@ -35,6 +35,21 @@ we will be treating these as smooth functions, with quadratic drag only.
 
 And for most of the flight of the sphere, this will be quadratic.
 
+## The Equations of Motion for Quadratic Drag
+
+\begin{equation}
+\begin{cases}
+$m \ddot{x} = -c \sqrt{\dot{x^2} + \dot{y^2}} \dot{x}$
+$m \ddot{y} = -c \sqrt{\dot{x^2} + \dot{y^2}} \dot{x}$
+\end{cases}
+\end{equation}
+
 ## Varying Mass
 
+Here, all of the diameters of the spheres are 1 meter, and the masses vary.
+
+$\m_{b} = 0.1 kg$ $\hspace{1cm}$ $\m_{r} = 10.0 kg$ $\hspace{1cm}$ $\m_{o} = 1000.0 kg$
+
 ![Varying Mass](plots/Pos_Quad_AR_VaryingMass.png)
+
+As you can see, the orange sphere, which is much more massive, takes a longer time to reach it's terminal velocity
