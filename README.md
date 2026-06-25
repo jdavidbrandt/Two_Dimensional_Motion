@@ -27,7 +27,7 @@ Where
 
 $\large \beta = 1.6 \times 10^{-4}\   N\ s / m^2$  $\hspace{1cm}$  $\large \gamma = 0.25\   N\ s^2 / m^4$
 
-$\large \frac{f_{quad}}{f_{lin}} = \frac{cv^{2}}{bv} = \frac{\gamma D}{\beta}v = (1.6 \times 10^{3} \frac{s}{m^2}) D v$ 
+$\large \frac{f_{quad}}{f_{lin}} = \frac{cv^{2}}{bv}\ = \frac{\gamma D}{\beta}v\ = (1.6 \times 10^{3}\ \frac{s}{m^2})\ D v$ 
 
 Since the ratio is such a large number for essentially all values (except where |v| = 0), this means that the quadratic force dominates
 
