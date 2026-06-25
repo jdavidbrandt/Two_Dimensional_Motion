@@ -64,7 +64,7 @@ $\large g = \frac{c}{m} \sqrt{\dot{x^2} + \dot{y^2}}\ \dot{y}$
 
 The orange mass is very massive compared to the other two, hence the right term here is small, because we are dividing by a large number
 
-In order for this right term to grow, to reach g, it must have a higher y velocity, so that's why it takes longer to reach it's terminal velocity compared to the other two.
+In order for this right term to grow, to reach g, it must have a higher y velocity or a lower mass (because $c\$ is constant here, so that's why it takes longer to reach it's terminal velocity compared to the other two.
 
 Here are the terminal velocities of all spheres involved
 
@@ -83,3 +83,32 @@ These are fairly comparable, but still different. Let's see how they interact on
 Friendly reminder that each pixel is a meter, so the width of the physics world you are looking at is 1.9 kilometers by ~ 1km
 
 ![](plots/varying_mass.gif)
+
+## Varying Diameter
+
+Let's vary the $c\$ parameter, by changing the diameter, and keeping the mass constant
+
+All masses here are 1000 kg
+
+The diameters of the blue, red, and orange spheres respectively, are
+
+$\large d_{b} = 1 \text{ m}$ $\hspace{1cm}$ $\large d_{r} = 5 \text{ m}$ $\hspace{1cm}$ $\large d_{o} = 10 \text{ m}$
+
+![](plots/Pos_Quad_AR_VaryingDiameter.png)
+
+Now, the blue sphere takes some time to reach terminal velocity, but why is this?
+
+The c value is small relative to all of the other c values, making the right side of the equation struggle to reach the value of g
+
+The reason this time is because the sphere's surface area is so small compared to it's mass that it takes a little over a minute for the sphere to reach it's terminal velocity
+
+![](plots/Vel_Quad_AR_VaryingDiameter.png)
+
+The other two spheres are more compareable, but as you can see, it only takes these are 20 seconds to reach their terminal velocities
+
+![](plots/Pos_Quad_AR_VaryingDiameterNoBlue.png)
+
+![](plots/Vel_Quad_AR_VaryingDiameterNoBlue.png)
+
+Now we can see that air resistance clearly affects the rate at which objects fall 
+
