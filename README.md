@@ -68,3 +68,5 @@ In order for this right term to grow, to reach g, it must have a higher y veloci
 Here are the terminal velocities of all spheres involved
 
 ![](plots/Vel_Quad_AR_VaryingMass.png)
+
+As you can see, the orange ball falls much faster than the other two. This is like dropping a bowling ball versus a fairly light balloon.
