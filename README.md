@@ -85,6 +85,10 @@ Friendly reminder that each pixel is a meter, so the width of the physics world 
 
 ![](plots/varying_mass.gif)
 
+Now let's see what it looks like zoomed in
+
+![](plots/varying_mass_magnified.gif)
+
 ## Varying Diameter
 
 Let's vary the $c\$ parameter, by changing the diameter, and keeping the mass constant
