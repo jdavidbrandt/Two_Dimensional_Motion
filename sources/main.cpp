@@ -26,7 +26,6 @@ double SampleAtTime(double t, const std::vector<double>& times, const std::vecto
     if(t <= times.front()) return values.front();
     if(t >= times.back()) return values.back();
 
-
     const double h = times[1] - times[0];                           //equivalent to step size
     const double fidx = (t - times.front()) / h;                    //the amount of samples between time t and the initial time 
     const size_t i = static_cast<size_t>(fidx);                     
@@ -42,27 +41,8 @@ double SampleAtTime(double t, const std::vector<double>& times, const std::vecto
 //Important to note, 1 meter := 1 pixel
 int main()
 {
-    const double pi = 3.1415926535;
-    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
-    SetTargetFPS(FPS);
-
-    //Circle properties, all circles start from center, and we will give them an x offset when drawn
-    double blue_diameter = 1;      //meters
-    double red_diameter = 5;       //meters
-    double orange_diameter = 10;  //meters
-    double circ_xpos = 0.0;
-    double circ_ypos = 0.0;
-    double blue_circ_mass = 1000;        //kgs
-    double red_circ_mass = 1000;      //kgs
-    double orange_circ_mass = 1000.0;     //kgs
-
-    
-    //We are going to use the same position for both blue and red circles, but not draw the blue one due to limitations with raylib
-    PhysicsCircle blue_circle = {circ_xpos, circ_ypos, blue_diameter / 2.0, BLUE, blue_circ_mass};
-    PhysicsCircle red_circle = {circ_xpos, circ_ypos, red_diameter / 2.0, RED, red_circ_mass};
-    PhysicsCircle orange_circle = {circ_xpos, circ_ypos, orange_diameter / 2.0, ORANGE, orange_circ_mass};
-
     //Define Constants, and Camera Properties
+    const double pi = 3.1415926535;
     const double G = 6.67430e-11;                                                   //Newton's Gravitational Constant
     const double mass_of_planet = 5.9722e24;                                       //Earth
     const double radius_of_planet = 6378137;                                      //meters (equatorial radius for simplicity)
@@ -70,9 +50,26 @@ int main()
     Vector2 offset = {(SCREEN_WIDTH / 2.0), (SCREEN_HEIGHT / 2.0)};
     Vector2 target = {(SCREEN_WIDTH / 2.0), (SCREEN_HEIGHT / 2.0)};
     float rotation = 0.0f;
-    float zoom = 2.0f;
+    float zoom = 10.0f;
     Camera2D camera = {offset, target, rotation, zoom};
 
+    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
+    SetTargetFPS(FPS);
+
+    //Circle properties, all circles start from center, and we will give them an x offset when drawn
+    double blue_diameter = 1;       //meters
+    double red_diameter = 1;       //meters
+    double orange_diameter = 1;   //meters
+    double circ_xpos = 0.0;
+    double circ_ypos = 0.0;
+    double blue_circ_mass = 1;              //kgs
+    double red_circ_mass = 10;             //kgs
+    double orange_circ_mass = 1000.0;     //kgs
+
+    //We are going to use the same position for both blue and red circles, but not draw the blue one due to limitations with raylib
+    PhysicsCircle blue_circle = {circ_xpos, circ_ypos, blue_diameter / 2.0, BLUE, blue_circ_mass};
+    PhysicsCircle red_circle = {circ_xpos, circ_ypos, red_diameter / 2.0, RED, red_circ_mass};
+    PhysicsCircle orange_circle = {circ_xpos, circ_ypos, orange_diameter / 2.0, ORANGE, orange_circ_mass};
     
     //Notice I am using a circle, this is important, because the differential equations would be different for a different shape
     //Also note that since we are dealing with non-conservative forces (drag), we cannot use Lagrangian Mechanics
@@ -93,11 +90,11 @@ int main()
     //BLUE CIRCLE: 
     // x'' = f(t, x, y, x', y'), and y''(t) = g(t, x, y, x', y')
     std::function<double(double,double,double,double,double)> xBlue_Equation = [blue_circle](double t, double x, double y, double x_dot, double y_dot){
-        return  -1 * ((blue_circle.c)*sqrt(x_dot*x_dot + y_dot*y_dot)*x_dot) / blue_circle.mass;
+        return (-1 * ((blue_circle.c)*sqrt(x_dot*x_dot + y_dot*y_dot)*x_dot) / blue_circle.mass);
     };
 
     std::function<double(double,double,double,double,double)> yBlue_Equation = [blue_circle, gravity](double t, double x, double y, double x_dot, double y_dot){
-        return gravity - ((blue_circle.c* sqrt(x_dot*x_dot + y_dot*y_dot) * y_dot) / blue_circle.mass);
+        return (gravity - ((blue_circle.c* sqrt(x_dot*x_dot + y_dot*y_dot) * y_dot) / blue_circle.mass));
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -112,23 +109,20 @@ int main()
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //ORANGE CIRCLE: 
     std::function<double(double,double,double,double,double)> xOrange_Equation = [orange_circle, gravity](double t, double x, double y, double x_dot, double y_dot){
-        return -1 * ((orange_circle.c)*sqrt(x_dot*x_dot + y_dot*y_dot)*x_dot) / orange_circle.mass;
+        return (-1 * ((orange_circle.c)*sqrt(x_dot*x_dot + y_dot*y_dot)*x_dot) / orange_circle.mass);
     };
 
     std::function<double(double,double,double,double,double)> yOrange_Equation = [orange_circle, gravity](double t, double x, double y, double x_dot, double y_dot){
-        return gravity - ((orange_circle.c* sqrt(x_dot*x_dot + y_dot*y_dot) * y_dot) / orange_circle.mass);
+        return (gravity - ((orange_circle.c* sqrt(x_dot*x_dot + y_dot*y_dot) * y_dot) / orange_circle.mass));
     };
 
 
-
-
-    //Initial conditions and values, generic t_initial and t_final for all rectangles
+    //Initial conditions and values, generic t_initial and t_final for all circles
     double t_initial = 0.0;
-    double t_final = 50;
+    double t_final = 25;
     double step_size = 0.001;
 
-
-    //Blue Circle, initial conditions are starting at origin (0,0) with sqrt(1250) x̂ + sqrt(1250) ŷ which gives |v| == 50
+    //Blue Circle, initial conditions are starting at origin (0,0) with 50 x̂ + 50 ŷ which gives |v| ~= 70.71
     double blue_xinitial = blue_circle.x;
     double blue_vxinitial = 50;
     double blue_yinitial = blue_circle.y;
@@ -200,6 +194,8 @@ int main()
 
     //Track time
     double elapsed = 0.0;
+    double y_offset = 540;
+    double x_offset = 955;
     
     while (!WindowShouldClose())
     {
@@ -207,12 +203,7 @@ int main()
         ClearBackground(BLACK);
 
         BeginMode2D(camera);
-            
-        //Can't draw smaller than meter without clukiness due to limitations with Raylib ):
-        //This is a solvable problem, but I am more interested in the plotting
-
-
-        
+                    
         //Define coordinates and draw circles at every sampled time
         double blue_worldx = SampleAtTime(elapsed, blue_xtime_vals, blue_xpos_vals);
         double blue_worldy = SampleAtTime(elapsed, blue_ytime_vals, blue_ypos_vals);
@@ -226,16 +217,25 @@ int main()
         double orange_worldy = SampleAtTime(elapsed, orange_ytime_vals, orange_ypos_vals);
         double orange_screeny = orange_yinitial +(orange_yinitial - orange_worldy);
 
-        //shift offsets of circles with varying diameters, i hardcoded the offset, sue me
-        DrawCircle(blue_worldx + 955, blue_screeny + 540, blue_circle.radius, BLUE);
-        DrawCircle(red_worldx + 960, red_screeny + 540, red_circle.radius, RED);
-        DrawCircle(orange_worldx + 965, orange_screeny + 540, orange_circle.radius, ORANGE);
+        //Creating vectors to pass into DrawCircleV()
+        Vector2 blue_vector(blue_worldx + x_offset, blue_screeny + y_offset);
+        Vector2 red_vector(red_worldx + x_offset, red_screeny + y_offset);
+        Vector2 orange_vector(orange_worldx + x_offset, orange_screeny + y_offset);
+
+        //Switched to DrawCircleV() which takes in vectors to eliminate int clunky-ness from DrawCircle()
+        DrawCircleV(blue_vector, blue_circle.radius, BLUE);
+        DrawCircleV(red_vector, red_circle.radius, RED);
+        DrawCircleV(orange_vector, orange_circle.radius, ORANGE);
 
         //Add time
         elapsed += GetFrameTime();
 
         EndMode2D();
         EndDrawing();
+
+        if(elapsed > t_final){
+            break;
+        }
         
     }
 
